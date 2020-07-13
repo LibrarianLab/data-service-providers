@@ -53,9 +53,7 @@ var methods = {
                     structure.news = data_file.news;
 
                     var saved_data = fs.writeFileSync(directory + feed_details.file, JSON.stringify(structure) );
-        
                 }
-
             }else{
                 structure.news = feed.items;
                 var saved_data = fs.writeFileSync(directory + feed_details.file, JSON.stringify(structure) );
