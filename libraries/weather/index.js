@@ -16,10 +16,33 @@ const methods = {
     /**
      * Get Forecast by city input
      */
-    getForecast: async ( city ) => {
-        return await axios.get(ipmaGlobal.forecast_uri+ipmaGlobal.local_ids[city]+".json");
+    getForecast: ( city ) => {
+        return new Promise((resolve,reject) => {
+
+            var url_request = ipmaGlobal.forecast_uri + city;
+
+            axios.get(url_request)
+            .then( response => {
+                if(response.status == 200)
+                    resolve(response.data)
+                else
+                    reject(null)
+            }).catch( (err) => {
+                reject(err)
+            })
+            
+        });
     }
     
 }
 
-module.exports = methods
+
+
+module.exports.methods = methods
+module.exports.cities = ipmaGlobal.local_ids;
+module.exports.configuration = ipmaGlobal;
+
+
+// this.methods.getForecast(this.cities.aveiro).then(r => {
+//     console.log(r);
+// })
