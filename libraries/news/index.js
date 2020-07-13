@@ -2,8 +2,20 @@ let axios = require('axios')
 let Parser = require('rss-parser')
 let fs = require('fs')
 let path = require('path')
-
 let parser = new Parser()
+
+var module_configuration = {
+    auto_sync : true,
+    sync_interval : 15000,
+    InitializeAutoSync : () => {
+        if(module_configuration.auto_sync){
+            setInterval( ()  => {
+                console.log(`[News Module] - Reading RSS Feeds`)
+                methods.read_feeds()
+             }, module_configuration.sync_interval);
+        }
+    }
+};
 
 var rssfeeds = {
     pplware : {
@@ -65,6 +77,5 @@ var methods = {
     }
 }
 
-methods.read_feeds();
-
-module.exports = methods;
+module.exports.methods = methods;
+module.exports.configuration = module_configuration;
