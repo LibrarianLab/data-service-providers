@@ -10,6 +10,11 @@ var rssfeeds = {
         url : "https://pplware.sapo.pt/feed/",
         dir : "..\\..\\files\\news\\",
         file : "pplware.json"
+    },
+    jnpt : {
+        url : "http://feeds.jn.pt/JN-Ultimas",
+        dir : "..\\..\\files\\news\\",
+        file : 'jn-pt.json'
     }
 };
 
