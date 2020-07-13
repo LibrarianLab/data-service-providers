@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
+    "rss-parser": "^3.8.0",
     "dotenv": "^8.2.0"
   }
 }
