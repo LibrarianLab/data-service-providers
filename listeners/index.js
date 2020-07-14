@@ -4,16 +4,19 @@ module.exports = (client) => {
     
     client.once('ready', () => {
 
-        console.log(` - BOT initialized successfully`);
+        console.log(` - BOT initialized successfully  with ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 
         client.user.setPresence({
             status: 'online',
             activity: {
-                name: 'Portugal',
+                name: `Serving servers!`,
                 type: 'PLAYING'
             }
         })
 
     })
 
+    require('./message')(client);
+
+    
 }
