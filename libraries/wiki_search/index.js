@@ -25,7 +25,7 @@ const fetchSearchToWikiAPI = async (elementToSearch, languageISOCode = null) => 
     return results;
 };
 
-const wiki_search = {
+const methods = {
     searchElement: async (element) => {
         const results = await fetchSearchToWikiAPI(element);
 
@@ -39,4 +39,4 @@ const wiki_search = {
     }
 };
 
-module.exports = wiki_search;
+module.exports = methods;
