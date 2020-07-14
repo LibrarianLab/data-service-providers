@@ -9,7 +9,7 @@ With the use of this modules, the user have the possibility to visualize the wea
 
 **Data Providers**
 
-- Discord
+- Discord - Coming Soon
 - _API_ - Coming Soon
 
 
