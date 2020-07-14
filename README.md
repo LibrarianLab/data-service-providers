@@ -8,11 +8,15 @@
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/jorgermduarte/discord-portugal-info-bot/blob/master/LICENSE" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/github/license//PortugalDataServiceProvider" />
+    <img alt="License: MIT" src="https://img.shields.io/pypi/l/ansicolortags.svg"/>
   </a>
 </p>
-
-Built with [![nodejs Badge](https://img.shields.io/badge/-Node.js-A9A9A9?style=flat-square&logo=Javascript&logoColor=black)](Node.js)
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/built-by-developers.svg"/>
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg"/>
+  <br>
+  <img src="https://forthebadge.com/images/badges/made-with-javascript.svg">
+</p>
 
 > This project is a integration of several modules in order to provide various types of customized data and oriented to all user needs, providing this information over api's and existing softwares like Discord and Slack.
 
@@ -73,4 +77,4 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is [ISC](https://github.com/jorgermduarte/discord-portugal-info-bot/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/jorgermduarte/discord-portugal-info-bot/blob/master/LICENSE) licensed.
