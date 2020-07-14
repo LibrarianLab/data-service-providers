@@ -2,7 +2,7 @@
   "name": "discord-bot-info-provider",
   "version": "1.0.0",
   "description": "A discord bot, that provides information of radars, weather information, to wikipedia searches and another tipes of things that will come.",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +19,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
     "node-html-parser": "^1.2.20",
-    "dotenv": "^8.2.0"
+    "wikijs": "^6.0.1"
   }
 }
