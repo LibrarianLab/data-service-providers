@@ -21,3 +21,11 @@ With the use of this modules, the user have the possibility to visualize the wea
 
 
 
+
+**Future Modules**
+
+- Radars in Portugal (Fixeds and mobile)
+- Instagram Posts
+- Facebook Page's Posts
+- Twitter Posts
+
