@@ -1,4 +1,4 @@
-var config = require('./../configurations')
+var config = require('../configurations')
 
 module.exports = ( client ) => {
 
