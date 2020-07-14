@@ -67,8 +67,8 @@ const methods = {
     * @param day
     * @author Alexandre Reis
     */
-    getSeaStateByDay: (day) => {
-        return newWeatherPromise( newUrl( ipma.oceanography.oceanography_uri, ipma.oceanography.daily_endpoint, day ) ) 
+    getSeaStateByDay: ( day ) => {
+        return newWeatherPromise( newUrl( ipma.oceanography.oceanography_uri, ipma.oceanography.daily_endpoint, day ) );
     },       
 
    /**
@@ -77,8 +77,8 @@ const methods = {
     * @param day
     * @author Alexandre Reis
     */
-    getFireRiscStateByDay: (day) => {
-        return newWeatherPromise(newUrl(ipma.fire.fire_uri, ipma.fire.daily_endpoint, day))
+    getFireRiscStateByDay: ( day ) => {
+        return newWeatherPromise( newUrl( ipma.fire.fire_uri, ipma.fire.daily_endpoint, day ) );
     }       
     
 }
