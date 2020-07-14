@@ -5,8 +5,10 @@ This project is a integration of several modules in order to provide various typ
 With the use of this modules, the user have the possibility to visualize the weather in determined city, viewing news from a certain group of rss feeds, viewing posts from various Instagram hashtags, among other existing modules.
 
 **Data Providers**
-* Discord
-* _API_ - Coming Soon
+
+- Discord
+- _API_ - Coming Soon
+
 
 **Modules Implemented **
 
