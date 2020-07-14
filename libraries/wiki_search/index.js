@@ -39,4 +39,6 @@ const methods = {
     }
 };
 
-module.exports = methods;
+module.exports = {
+    methods
+};
