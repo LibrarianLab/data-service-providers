@@ -16,6 +16,7 @@ With the use of this modules, the user have the possibility to visualize the wea
 **Modules Implemented**
 
 - Weather
+- New World News (Amazon Game)
 - Rss Feeds
 - Wikipedia
 
