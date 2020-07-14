@@ -7,6 +7,17 @@ module.exports.ipma = {
         oceanography_uri: "https://api.ipma.pt/open-data/forecast/oceanography/daily/",
         daily_endpoint: "hp-daily-sea-forecast-day",
     },
+    fire: {
+        fire_uri: "https://api.ipma.pt/open-data/forecast/meteorology/rcm/",
+        daily_endpoint: "rcm-d",
+        danger_ids: {
+            low: 1,
+            moderate: 2,
+            high: 3,
+            very_high: 4,
+            max: 5
+        }
+    },
     local_ids: {
         aveiro: 1010500,
         coimbra: 1060300,

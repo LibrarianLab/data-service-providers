@@ -69,6 +69,16 @@ const methods = {
     */
     getSeaStateByDay: (day) => {
         return newWeatherPromise( newUrl( ipma.oceanography.oceanography_uri, ipma.oceanography.daily_endpoint, day ) ) 
+    },       
+
+   /**
+    * Get all country districts fire risc for a specific day
+    *
+    * @param day
+    * @author Alexandre Reis
+    */
+    getFireRiscStateByDay: (day) => {
+        return newWeatherPromise(newUrl(ipma.fire.fire_uri, ipma.fire.daily_endpoint, day))
     }       
     
 }
@@ -77,8 +87,3 @@ const methods = {
 module.exports.methods = methods
 module.exports.cities = ipma.local_ids;
 module.exports.days = ipma.day_ids;
-
-
-module.exports.methods.getSeaStateByDay(module.exports.days.today).then( r => {
-    console.log(r);
-})
