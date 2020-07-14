@@ -1,21 +1,6 @@
-let axios = require('axios')
+const axios = require('axios')
+const {ipma} = require("./ipma")
 
-
-const ipmaGlobal  ={
-    forecast_uri: "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/",
-    day_endpoint: "hp-daily-forecast-day",
-    local_ids : {
-        aveiro: 1010500,
-        coimbra: 1060300,
-        porto: 1131200,
-        lisboa: 1110600
-    },
-    day_ids : {
-        today : 0,
-        tomorrow : 1,
-        after_tomorrow : 2
-    }
-}
 
 /**
  * Url builder based on specific arguments 
@@ -37,7 +22,7 @@ const newUrl = (...arguments) => {
  * @param url
  * @author Alexandre Reis
  */
-const newForecastPromise = (url) => {
+const newWeatherPromise = (url) => {
     return new Promise((resolve, reject) => {
 
         axios.get(url)
@@ -54,8 +39,6 @@ const newForecastPromise = (url) => {
 };
 
 
-
-
 const methods = {
 
     /**
@@ -65,23 +48,37 @@ const methods = {
      * @author Alexandre Reis
      */
     getFiveDayForecastByCity: ( city ) => {
-        return newForecastPromise( newUrl( ipmaGlobal.forecast_uri, city ) );
+        return newWeatherPromise( newUrl( ipma.forecast.forecast_uri, city ) );
     },
 
     /**
      * Get all country districts forecast for a specific day
      * 
      * @param day
-     * @author
+     * @author Alexandre Reis
      */
     getForecastByDay: ( day ) => {
-        return newForecastPromise( newUrl(ipmaGlobal.forecast_uri, ipmaGlobal.day_endpoint, day) );
-    }
+        return newWeatherPromise( newUrl( ipma.forecast.forecast_uri, ipma.forecast.daily_endpoint, day ) );
+    }, 
+
+    /**
+    * Get all country districts ocenography for a specific day
+    *
+    * @param day
+    * @author Alexandre Reis
+    */
+    getSeaStateByDay: (day) => {
+        return newWeatherPromise( newUrl( ipma.oceanography.oceanography_uri, ipma.oceanography.daily_endpoint, day ) ) 
+    }       
     
 }
 
 
 module.exports.methods = methods
-module.exports.cities = ipmaGlobal.local_ids;
-module.exports.days = ipmaGlobal.day_ids;
-module.exports.configuration = ipmaGlobal;
+module.exports.cities = ipma.local_ids;
+module.exports.days = ipma.day_ids;
+
+
+module.exports.methods.getSeaStateByDay(module.exports.days.today).then( r => {
+    console.log(r);
+})
