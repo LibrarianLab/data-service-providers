@@ -1,22 +1,14 @@
-var Discord = require('discord.js')
+const requestsHelper = require('../helpers/requests.helper');
+const commandsHandler = require('./commands');
 
 module.exports = (client) => {
-    
-    client.once('ready', () => {
+    client.on('message', async (message) => {
 
-        console.log(` - BOT initialized successfully  with ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+        if (!requestsHelper.isAValidRequest(message)) return;
 
-        client.user.setPresence({
-            status: 'online',
-            activity: {
-                name: `Serving servers!`,
-                type: 'PLAYING'
-            }
-        })
-
-    })
-
-    require('./message')(client);
-
-    
+        const command = requestsHelper.getCommandWithArgs(message);
+        const findTheHandlerToExecute = commandsHandler(message)[command];
+        
+        return findTheHandlerToExecute ? findTheHandlerToExecute() : requestsHelper.getCommandNotFoundMessage(message);
+    });
 }
