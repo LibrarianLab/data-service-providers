@@ -1,6 +1,6 @@
 const config = require('../configurations')
 
-const methods = {
+const utils = {
     isAValidRequest: (message) => {
         // It's good practice to ignore other bots. This also makes your bot ignore itself
         // and not get into a spam loop (we call that "botception").
@@ -27,4 +27,4 @@ const methods = {
     }
 }
 
-module.exports = methods;
+module.exports = utils;

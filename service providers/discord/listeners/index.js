@@ -1,14 +1,14 @@
-const requestsHelper = require('../helpers/requests.helper');
+const utils = require('./utils');
 const commandsHandler = require('./commands');
 
 module.exports = (client) => {
     client.on('message', async (message) => {
 
-        if (!requestsHelper.isAValidRequest(message)) return;
+        if (!utils.isAValidRequest(message)) return;
 
-        const command = requestsHelper.getCommandWithArgs(message);
+        const command = utils.getCommandWithArgs(message);
         const findTheHandlerToExecute = commandsHandler(message)[command];
         
-        return findTheHandlerToExecute ? findTheHandlerToExecute() : requestsHelper.getCommandNotFoundMessage(message);
+        return findTheHandlerToExecute ? findTheHandlerToExecute() : utils.getCommandNotFoundMessage(message);
     });
 }
